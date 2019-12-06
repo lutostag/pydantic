@@ -52,6 +52,8 @@ def pydantic_encoder(obj: Any) -> Any:
         return str(obj)
     elif is_dataclass(obj):
         return asdict(obj)
+    elif obj is None:
+        return None
 
     try:
         encoder = ENCODERS_BY_TYPE[type(obj)]

@@ -51,6 +51,7 @@ class MyEnum(Enum):
         (Decimal('12.34'), '12.34'),
         (create_model('BarModel', a='b', c='d')(), '{"a": "b", "c": "d"}'),
         (MyEnum.foo, '"bar"'),
+        (None, 'null'),
     ],
 )
 def test_encoding(input, output):
